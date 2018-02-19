@@ -1,0 +1,16 @@
+{
+  "name": "dbint",
+  "version": "1.0.0",
+  "description": "Workout tracker that stores and retrieves data in a mySql database",
+  "main": "main.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^2.0.1",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Charles Jadin",
+  "license": "ISC"
+}

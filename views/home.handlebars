@@ -1,0 +1,76 @@
+<head>
+  <link rel="stylesheet" href="wStyle.css">
+</head>
+<body>
+ <div class="il">
+  <form id="wf">
+    <h2 id="fh">Record a Workout</h2>
+    <div id="woAdd" style="width:350px">
+     <fieldset>
+      Name: <input type="text" name="name" size="30" maxlength="100" value="Workout"><br />
+     </fieldset>
+     <fieldset>
+      Date: <input type="date" name="date"><br />
+     </fieldset>
+     <fieldset>
+      Reps: <input type="number" name="reps" size="30" maxlength="5" value="0"><br />
+     </fieldset>
+     <fieldset>
+      Weight: <input type="number" name="weight" size="30" maxlength="5" value="0"><br />
+     </fieldset>
+     <fieldset>
+      <label>Units</label>
+      <input type="radio" name="lbs" value="1" checked />lbs
+      <input type="radio" name="lbs" value="0" />kg
+     </fieldset>
+    </div>
+    <br />
+    <button id="addSubmit" value="0">Log workout</button>
+    <button id="update" value="0">Update</button>
+    <button id="cancel">Cancel</button>
+    <br />
+    <br />
+  </form>
+ </div>
+ <div class="il" id="rt">
+  <h2>Logged Workouts:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Reps</th>
+        <th>Weight</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody id="wkotab">
+      {{#each results}}
+      <tr id="row{{this.id}}"><span>
+        <td>{{this.name}}</td>
+        <td>{{this.date1}}</td>
+        <td>{{this.reps}}</td>
+        <td>{{this.weight}} {{this.units}}</td>
+        <td>
+          <form>
+            <input type="hidden" id="edit{{this.id}}i" value="{{this.id}}">
+            <button id="edit{{this.id}}">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form>
+            <input type="hidden" id="delete{{this.id}}i" value="{{this.id}}">
+            <button id="delete{{this.id}}">Delete</button>
+          </form>
+        <form>
+          <input id="w{{this.id}}" type ="hidden" value="{{this.weight}}">
+          <input id="d{{this.id}}" type="hidden" value="{{this.date}}">
+        </form>
+        </td>
+      </span></tr>
+      {{/each}}
+    </tbody>
+  </table>
+ </div>
+<script src="tablescript.js"></script>
+</body>
